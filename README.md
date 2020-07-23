@@ -43,7 +43,7 @@ Vue Composition API：[https://vue-composition-api-rfc.netlify.app/api.html](htt
 
 **源码位置是在packages目录中**，实际上源码主要分为两部分，编译器 和 运⾏时环境。
 
- ![](D:\github\Vue-3x-Study\ymjg.png)
+ ![](https://raw.githubusercontent.com/MuGuiLin/Vue-3x-Study/master/ymjg.png)
 
 + 编译器 
 
