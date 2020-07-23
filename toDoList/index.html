@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>toDoList 待办事项清单</title>
+    <link rel="stylesheet" href="./css/base.css" />
+    <script src="./js/vue.global.js"></script>
+    <script src="./js/storage.js"></script>
+</head>
+
+<body>
+    <h1>待办事项清单</h1>
+    <hr />
+
+    <section id="app" class="to-do-list">
+        <div class="head">
+             <h3><!--{{time}}--> {{date}}</h3> 
+            <input type="text" name="matter" @keyup.enter="addMatter($event)" placeholder="请输入待办事项，按回车键结束！" />
+        </div>
+
+        <h3>待办事项：{{notMatter}} 件 {{notNum}}</h3>
+        <hr>
+
+        <ul class="list">
+            <!-- <Item></Item> -->
+            <li v-for="(item, i) in matter" v-show="0 == item.status">
+                <label>
+                    <input type="checkbox" v-model="item.status"  @change="onChange($event)" />
+                    {{item.title}}
+                </label>
+                <i @click="delMatter(i)">×</i>
+            </li>
+        </ul>
+        <br><br>
+        <h3>己办事项：{{yesMatter}} 件 {{yesNum}}</h3>
+        <hr>
+
+        <ul class="list ok">
+            <li v-for="(item, i) in matter" v-show="1 == item.status">
+                <input type="checkbox" v-model="item.status" :id="'matter-item-'+i" @change="onChange($event)" />
+                <label :for="'matter-item-'+i">
+                    {{item.title}}
+                </label>
+                <i @click="delMatter(i)">×</i>
+            </li>
+        </ul>
+
+    </section>
+
+    <script src="./js/base.js"></script>
+</body>
+
+</html>
