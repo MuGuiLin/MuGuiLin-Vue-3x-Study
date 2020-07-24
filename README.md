@@ -121,7 +121,7 @@ Vue Composition API：[https://vue-composition-api-rfc.netlify.app/api.html](htt
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Composition API</title>
-    <script src="./js/vue.global.js"></script>
+    <script src="../dist/vue.global.js"></script>
 </head>
 
 <body>
